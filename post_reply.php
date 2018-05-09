@@ -1,0 +1,49 @@
+<?php
+session_start()
+?>
+<html>
+<head>
+<style>
+@font-face
+{
+	font-family:Supercell;
+	src: url('sources/Supercell-magic-webfont.ttf')
+}
+button
+{
+	font-family:Supercell;
+	color:white;
+	border: 3px solid white;
+	padding: 15px 32px;
+	display: inline-block;
+	background-color: #FF0000;
+}
+</style>
+</head>
+<body background="sources/carbon2.jpg">
+<center><br>
+<?php
+	$_SESSION['tid'] = $_GET['id'];
+?>
+<form action = "push_reply.php" method = "POST">
+<fieldset>
+<legend>
+<h2 style="font-family:Supercell;color:white;"> Reply to thread </h2>
+</legend>
+<p style="font-family:Supercell;color:white;">
+Reply title : <input type="text" name = "rtitle" style = "width:500px;" required>
+<br><br>
+Enter Content : <br><br>
+<xmp style='font-family:Segoe UI;color:white;'> You can use usual HTML formatting tags such as <b>,<i>,<u> etc.
+Please enclose any syntax data in <xmp> </xmp> tags.</xmp> 
+<br><br>
+<textarea name="rdata" rows="30" cols="90" placeholder="Hello World!" required>
+</textarea>
+<br><br>
+<button type="submit">Reply</button>
+</p>
+</fieldset>
+</form>
+</center>
+</body>
+</html>

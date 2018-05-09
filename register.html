@@ -1,0 +1,108 @@
+<html>
+<head>
+<style>
+@font-face
+{
+	font-family:Supercell;
+	src: url('sources/Supercell-magic-webfont.ttf')
+}
+button
+{
+	font-family:Supercell;
+	color:white;
+	border: 3px solid white;
+	padding: 15px 32px;
+	display: inline-block;
+	background-color: #FF0000;
+}
+</style>
+<script>
+var txt = document.getElementById("status");
+function checkTel()
+{
+	var tel = document.getElementById("ph").value;
+	if(tel > 9999999999 || tel < 1000000000 || isNaN(tel))
+	{
+		document.getElementById("status").innerHTML = "*Invalid Phone number.";
+		document.getElementById('sub').style.visibility = 'hidden';
+	}
+	else
+	{
+		document.getElementById("status").innerHTML = "";
+		document.getElementById('sub').style.visibility = 'visible';
+	}
+}
+function checkId()
+{
+	var uid = document.getElementById('uid').value;
+	if(uid > 1711981999 || uid < 1211981000 || isNaN(uid))
+	{
+		document.getElementById("status").innerHTML = "*Invalid Student ID";
+		document.getElementById('sub').style.visibility = 'hidden';
+	}
+	else
+	{
+		document.getElementById('sub').style.visibility = 'visible';
+	}
+}
+function pwd()
+{
+	var p1 = document.getElementById('p1').value;
+	var p2 = document.getElementById('p2').value;
+	if(p1 != p2)
+	{
+		document.getElementById("status").innerHTML = "*Entered passwords don't match";
+		document.getElementById('sub').style.visibility = 'hidden';
+	}
+	else
+	{
+		document.getElementById('sub').style.visibility = 'visible';
+	}
+	if(p1.length < 8)
+	{
+		document.getElementById("status").innerHTML = "*Password should be atleast 8 digits long";
+		document.getElementById('sub').style.visibility = 'hidden';
+	}
+	else
+	{
+		document.getElementById('sub').style.visibility = 'visible';
+	}
+}
+</script>
+</head>
+<body background="sources/carbon2.jpg">
+<center><br>
+<form action="checkRegister.php" method = "POST">
+<fieldset>
+<legend>
+<h1 style="font-family:Supercell;color:white;">&emsp; Become a part of the Clan! <img src = "sources/shield-icon-crop.png" height = 7%>&emsp;</h1>
+</legend>
+<p style="font-family:Supercell;color:white;">
+Fill out this form<br><br>
+Student ID : <input type="text" id = "uid" name = "uid" onchange = "checkId()" required> &emsp;(enter the college student id) <br><br>
+Password : <input type="password" id = "p1" name = "pass" onchange = "pwd()" required> &emsp;(create your password) <br><br>
+Confirm Password : <input type="password" id = "p2" name = "pass2" onchange = "pwd()" required> &emsp;(confirm your password) <br><br>
+Email ID : <input type="email" maxlength = 30 name = "email" required> &emsp;(enter your email-id) <br><br>
+Name : &emsp; <input type="text" name = "uname" required> &emsp;(Whats your name?) <br><br>
+Batch : &emsp; <select type="select" name = "batch" style = "width:160px;" required>
+			<option value="NULL" selected> Choose </option>
+			<option value="2012"> 2012 </option>
+			<option value="2013"> 2013 </option>
+			<option value="2014"> 2014 </option>
+			<option value="2015"> 2015 </option>
+			<option value="2016"> 2016 </option>
+			<option value="2017"> 2017 </option>
+		</select> &emsp;(enter your Batch) 
+<br><br>
+Section : <input type="text" maxlength = 4 name = "section" required> &emsp;(which section you from?) <br><br>
+Phone Number : <input type="tel" maxlength = 10 name = "ph_no" id="ph" onchange="checkTel()"> &emsp;(your mobile number plz) <br><br>
+<button type="submit" id = "sub">GO!
+</button>
+<p style="font-family:Segoe UI;color:red;" id="status"> </p>
+
+</p>
+</fieldset>
+</form>
+</center>
+</body>
+</html>
