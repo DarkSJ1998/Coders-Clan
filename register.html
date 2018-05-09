@@ -35,13 +35,19 @@ function checkTel()
 function checkId()
 {
 	var uid = document.getElementById('uid').value;
-	if(uid > 1711981999 || uid < 1211981000 || isNaN(uid))
+	if(uid > 1711981999 || uid < 1211981000)
 	{
 		document.getElementById("status").innerHTML = "*Invalid Student ID";
 		document.getElementById('sub').style.visibility = 'hidden';
 	}
+	else if(isNaN(uid) && (uid.indexOf('CU') >= 3 || uid.indexOf('CU') == -1))
+	{
+	    document.getElementById("status").innerHTML = "*Invalid Teacher ID";
+		document.getElementById('sub').style.visibility = 'hidden';
+	}
 	else
 	{
+	    document.getElementById("status").innerHTML = "";
 		document.getElementById('sub').style.visibility = 'visible';
 	}
 }
@@ -56,6 +62,7 @@ function pwd()
 	}
 	else
 	{
+	    document.getElementById("status").innerHTML = "";
 		document.getElementById('sub').style.visibility = 'visible';
 	}
 	if(p1.length < 8)
@@ -65,6 +72,7 @@ function pwd()
 	}
 	else
 	{
+	    document.getElementById("status").innerHTML = "";
 		document.getElementById('sub').style.visibility = 'visible';
 	}
 }
