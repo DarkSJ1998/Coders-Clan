@@ -107,7 +107,7 @@ p
 							</center>
 						</td>
 						<td>
-							<h3 style='font-family:Georgia;'>Student ID : # $row[0] &ensp; </h3>
+							<h3 style='font-family:Georgia;'> ID : # $row[0] &ensp; </h3>
 						</td>
 					</tr>
 					<tr>

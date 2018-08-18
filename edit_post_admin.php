@@ -38,7 +38,7 @@ button
 	{
 		$row=mysqli_fetch_row($result);
 		echo "
-		Title : <input type='text' name = 'title' style = 'width:500px;' value = " . $row[1] . " required>
+		Title : <input type='text' name = 'title' style = 'width:500px;' value = '$row[1]' required>
 		<br><br>
 		type : <select name='type' style = 'width:500px;' required>
 						<option value = " . $row[2] . "> " . $row[2] . " </option>
@@ -49,8 +49,8 @@ button
 					</select>
 		<br><br>
 		Thread Content : <br><br>
-		<xmp style='font-family:Segoe UI;color:white;'> You can use usual HTML formatting tags such as <b>,<i>,<u> etc.
-		Please enclose any syntax data in <xmp> </xmp> tags.</xmp> 
+		<span style='font-family:Segoe UI;color:white;'>
+		Please enclose any syntax data in <xmp style='font-family:Segoe UI;color:white;'> <code></code></xmp> tags.</span> 
 		<br><br>";
 
 		echo "<br><textarea name='data' rows='30' cols='90' required>" . $row[5] . " </textarea>";

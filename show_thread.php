@@ -3,6 +3,7 @@
 ?>
 <html>
 <head>
+<meta name="viewport" width="device-width">
 <style>
 @font-face
 {
@@ -36,13 +37,22 @@ div
 	background-color:#FF6347;
 	border-radius: 25px;
 	//height: 100px;
-	padding: 60px;
+	padding: 20px;
+	//width:90%;
 	width:1300px;
 	word-wrap: break-word;
 	text-align:left;
+	display: inline-block;
+	
 	margin-top: 3%;
 	margin-left: 3%;
 	margin-right: 3%;
+	white-space: nowrap;
+	//white-space: initial;
+	overflow: auto;
+	
+	word-break: break-all;
+	text-align: justify;
 }
 p
 {
@@ -62,7 +72,7 @@ p
 </style>
 </head>
 <body background="sources/carbon2.jpg">
-<marquee style="background:#b70e0e;font-family:Supercell;color:white;" behavior="alternate"> Tutorials </marquee>
+<marquee style="background:#b70e0e;font-family:Supercell;color:white;width:100%;" behavior="alternate"> Threads </marquee>
 <center>
 <!--
 
@@ -96,6 +106,13 @@ p
 		if($result->num_rows > 0)
 		{
 			echo "(*Forum Admin*)";
+		}
+		$query3 = "SELECT `name` FROM `user` WHERE `user_id` = '$row[3]'";
+		$result1 = $connection->query($query3);
+		if($result1->num_rows > 0)
+		{
+			$u=mysqli_fetch_row($result1);
+			echo "($u[0])";
 		}
 		echo"
 		<br>

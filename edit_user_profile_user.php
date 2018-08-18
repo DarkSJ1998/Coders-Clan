@@ -149,7 +149,7 @@ function pwd()
 							</center></h3>
 						</td>
 						<td>
-							<h3 style='font-family:Georgia;'>Student ID : # $row[0] &ensp;(edit not available) </h3>
+							<h3 style='font-family:Georgia;'> ID : # $row[0] &ensp;(edit not available) </h3>
 						</td>
 					</tr>
 					<tr>

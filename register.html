@@ -87,11 +87,11 @@ function pwd()
 </legend>
 <p style="font-family:Supercell;color:white;">
 Fill out this form<br><br>
-Student ID : <input type="text" id = "uid" name = "uid" onchange = "checkId()" required> &emsp;(enter the college student id) <br><br>
-Password : <input type="password" id = "p1" name = "pass" onchange = "pwd()" required> &emsp;(create your password) <br><br>
-Confirm Password : <input type="password" id = "p2" name = "pass2" onchange = "pwd()" required> &emsp;(confirm your password) <br><br>
-Email ID : <input type="email" maxlength = 30 name = "email" required> &emsp;(enter your email-id) <br><br>
-Name : &emsp; <input type="text" name = "uname" required> &emsp;(Whats your name?) <br><br>
+Student ID * : <input type="text" id = "uid" name = "uid" onchange = "checkId()" required> &emsp;(enter the college student id) <br><br>
+Password * : <input type="password" id = "p1" name = "pass" onchange = "pwd()" required> &emsp;(create your password) <br><br>
+Confirm Password * : <input type="password" id = "p2" name = "pass2" onchange = "pwd()" required> &emsp;(confirm your password) <br><br>
+Email ID * : <input type="email" maxlength = 50 name = "email" required> &emsp;(enter your email-id) <br><br>
+Name * : &emsp; <input type="text" name = "uname" required> &emsp;(Whats your name?) <br><br>
 Batch : &emsp; <select type="select" name = "batch" style = "width:160px;" required>
 			<option value="NULL" selected> Choose </option>
 			<option value="2012"> 2012 </option>
@@ -102,7 +102,7 @@ Batch : &emsp; <select type="select" name = "batch" style = "width:160px;" requi
 			<option value="2017"> 2017 </option>
 		</select> &emsp;(enter your Batch) 
 <br><br>
-Section : <input type="text" maxlength = 4 name = "section" required> &emsp;(which section you from?) <br><br>
+Section * : <input type="text" maxlength = 4 name = "section" required> &emsp;(which section you from?) <br><br>
 Phone Number : <input type="tel" maxlength = 10 name = "ph_no" id="ph" onchange="checkTel()"> &emsp;(your mobile number plz) <br><br>
 <button type="submit" id = "sub">GO!
 </button>

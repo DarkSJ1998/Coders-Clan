@@ -101,7 +101,15 @@ p
 			}
 			echo
 			"<p style='float:left;'> " . " &ensp; </p>
-			<p style='float:right;'>Posted by: &ensp; $row[3] (admin) <br>
+			<p style='float:right;'>Posted by: &ensp; $row[3] ";
+			$query3 = "SELECT `name` FROM `user` WHERE `user_id` = '$row[3]'";
+			$result1 = $connection->query($query3);
+			if($result1->num_rows > 0)
+			{
+				$u=mysqli_fetch_row($result1);
+				echo "($u[0])";
+			}
+			echo"<br>
 			Posted on: &ensp; $row[6]</p>
 			</div>
 			</td>
